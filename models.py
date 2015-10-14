@@ -1,16 +1,17 @@
 from django.db import models
-class Article(models.Model):
+
+class ModelName1(models.Model):
   class Meta():
-    db_table = 'article'
+    db_table = 'table_name'
                 
   title = models.CharField(max_length = 200)
   text = models.TextField()
   date = models.DateTimeField()
   likes = models.IntegerField(default=0)
         	
-class Comments(models.Model):
+class ModelName2(models.Model):
   class Meta():
-    db_table = 'comments'
+    db_table = 'table_name'
                 
   text = models.TextField()
-  article = models.ForeignKey(Article)
+  article = models.ForeignKey(ModelName1)
